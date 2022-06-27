@@ -10,6 +10,7 @@ public class ProductOfTwoNumbers {
 		int b = sc.nextInt();
 		int prod = a*b;
 		System.out.println("Product is = " + prod);
+		sc.close();
 	}
 
 }
