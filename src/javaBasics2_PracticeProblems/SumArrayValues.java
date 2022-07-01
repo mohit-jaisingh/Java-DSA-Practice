@@ -12,7 +12,6 @@ public class SumArrayValues {
 		
 		System.out.println("Sum = " + sum);
 		
-
 	}
 
 }
