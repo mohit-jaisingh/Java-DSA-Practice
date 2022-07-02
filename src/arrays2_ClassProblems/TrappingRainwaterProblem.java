@@ -50,7 +50,7 @@ public class TrappingRainwaterProblem {
 		return totalArea;
 	}
 	
-	static int maxRainWaterOP(int[] a) {
+	static int maxRainWaterOP(int[] a) { //O(1) space, O(N) time.
 		int lMax = 0;
 		int rMax = 0;
 		
@@ -63,14 +63,14 @@ public class TrappingRainwaterProblem {
 			
 			if(a[l]<= a[r]) { //assume a[l] < rMax also
 				if(a[l]<lMax) {
-					waterTrapped += lMax - a[l];
+					waterTrapped += lMax - a[l]; //assume lMax is also less than rMax.
 				}else lMax = a[l];
 				l++;
 			}
 			
 			if(a[r] < a[l]) {  //assume a[r] < lMax also
 				if(a[r] < rMax) {
-					waterTrapped += rMax - a[r];
+					waterTrapped += rMax - a[r]; // assume rMax < lMax
 				}else rMax = a[r];
 				r--;
 			}
