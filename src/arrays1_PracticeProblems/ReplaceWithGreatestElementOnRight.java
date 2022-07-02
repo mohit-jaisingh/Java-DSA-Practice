@@ -4,7 +4,7 @@ public class ReplaceWithGreatestElementOnRight {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int arr[] = {7,5,8,9,6,8,5,7,4,6};
+		int arr[] = {7,5,8,9,6,8,5,7,4,6}; // [9,9,9,8,8,7,7,6,6,0]
 		
 		replaceWithGreatestOnRight(arr);
 		
@@ -19,8 +19,8 @@ public class ReplaceWithGreatestElementOnRight {
 		int max = 0;
 		
 		for(int i = n; i>=0; i--) {
-			int curr = arr[i];
 			
+			int curr = arr[i];		
 			arr[i] = max;
 			
 			if(curr > max) {
