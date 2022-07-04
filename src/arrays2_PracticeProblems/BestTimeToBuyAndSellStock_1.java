@@ -3,7 +3,7 @@ package arrays2_PracticeProblems;
 public class BestTimeToBuyAndSellStock_1 {
 
 	public static void main(String[] args) {
-		
+		//buy once sell once for max profit.
 		int prices[] = {2,2,5};
 		System.out.println(findMaxProfit(prices));
 	}
