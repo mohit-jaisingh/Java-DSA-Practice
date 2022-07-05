@@ -17,7 +17,7 @@ public class BestTimeToBuyAndSellStock_2 {
         int n= prices.length;
         
         for(int i=0; i<n; i++){
-            if((buyPrice==-1 || (prices[i-1] > prices[i])) && (i==n-1 || prices[i]<prices[i+1])  ){
+            if((buyPrice==-1 || (prices[i-1] > prices[i])) && (i==n-1 || prices[i]<prices[i+1])){
                 buyPrice = prices[i];
                 System.out.println("bought at " + buyPrice);
             }
