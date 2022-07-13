@@ -13,6 +13,12 @@ public class ThreeSum extends TwoSum{ //find 3 numbers in an unsorted Array with
 
 	}
 	
+	//Brute force is to have nested loop of 3 and check if that combo gives the sum.
+	
+	//optimized is to take ith element and then find TwoSum such that TwoSum + ith = sum.
+		
+		
+	
 	static boolean threeSum(int[] a, int sum) {
 		
 		Arrays.sort(a); // O(NlogN);
@@ -27,12 +33,4 @@ public class ThreeSum extends TwoSum{ //find 3 numbers in an unsorted Array with
 		return false;
 	}
 	
-	
-	
-	//Brute force is to have nested loop of 3 and check if that combo gives the sum.
-	
-	//optimized is to take ith element and then find TwoSum such that TwoSum + ith = sum.
-	
-	
-
 }
