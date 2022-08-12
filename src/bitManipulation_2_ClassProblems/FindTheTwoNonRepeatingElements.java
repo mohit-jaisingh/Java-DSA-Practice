@@ -6,36 +6,32 @@ public class FindTheTwoNonRepeatingElements {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] a = {1,1,2,2,3,4,5,5,6,6};
+		int[] a = {2,1,4,1,2,3,4,40};
 		Pair twoElements = FindTwoNonRepeatingElements(a);
 		System.out.println(twoElements.a + " " + twoElements.b);
 	}
 	
 	static Pair FindTwoNonRepeatingElements(int[] a) {
-		int exor = a[0];
+		int exor = 0;
 		
-		for(int i=1; i<a.length; i++) {
-			exor = exor^a[i];
+		for(int i=0; i<a.length; i++) { //find exor of all elements
+			exor = exor^a[i]; 
 		}
 		
+		// we remain with exor of the two non repeating elements
+		
+		//find the Least signigicant set bit in exor
 		int mask = 1;
 
 		while((exor & mask) == 0) {
 			mask = mask<<1;
 		}
 		
-		ArrayList<Integer> x = new ArrayList<>(); // has 1 at LSSB of mask
-		ArrayList<Integer> y = new ArrayList<>(); // has 0 
-		
+		int firstNum = 0;
 		for(int i=0; i<a.length; i++) {
 			if((a[i] & mask) == 1) {
-				x.add(a[i]);
-			}else y.add(a[i]);
-		}
-		
-		int firstNum = exor;
-		for(int e : x) {
-			firstNum = firstNum^e;
+				firstNum = firstNum^a[i];
+			}
 		}
 		
 		int secondNum = exor ^ firstNum;
@@ -44,5 +40,18 @@ public class FindTheTwoNonRepeatingElements {
 	}
 
 }
+
+class Pair {
+	public int a;
+	public int b;
+ 
+	
+	public Pair(int a, int b) {
+		this.a = a;
+		this.b = b;
+	}
+
+}
+
 
 
